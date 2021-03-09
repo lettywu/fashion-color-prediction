@@ -48,7 +48,7 @@ After done with the processing, I extract the domain colors with their RGBA valu
 |christian-dior|2021|spring|35|205|180|159|253|
 
 ## Insights
-<p float="center">
+<p align="center">
   <img src="./plots/popular_color_single_pic_3d.png" width="500" />
   <img src="./plots/chanel_2018_spring_12.out.png" width="110" /> 
 <p align = 'center'>
@@ -57,7 +57,7 @@ After done with the processing, I extract the domain colors with their RGBA valu
 This is a demonstration of the popular color from on model, at very top, all the 3 blueish color they have same name, but from RGB value, we can tell they are clearly different colors. So, it’s valuable to use Kmeans Clustering to get the accurate color, instead of arbitrary group by the color name, I believe this matter for industry expertise.  
 
 <p align = 'center'>
-    <img src="./plots/popular_colors_2021_some_brand_3d.png" width="600"/><img src="./plots/popular_colors_2021_some_brand.png" width="650"/>
+    <img src="./plots/popular_colors_2021_some_brand_3d.png" width="550"/><img src="./plots/popular_colors_2021_some_brand.png" width="650"/>
     
 Those are predicted popular colors in 2021, but it’s a quick and dirty way to predict the popular colors, because it only contains 50 brands. 
 
