@@ -50,29 +50,27 @@ After done with the processing, I extract the domain colors with their RGBA valu
 ## Insights
 <p float="center">
   <img src="./plots/popular_color_single_pic_3d.png" width="500" />
-  <img src="./plots/chanel_2018_spring_12.out.png" width="150" /> 
+  <img src="./plots/chanel_2018_spring_12.out.png" width="110" /> 
 <p align = 'center'>
     <img src="./plots/popular_color_single_pic.png" width="650"/>
 
 This is a demonstration of the popular color from on model, at very top, all the 3 blueish color they have same name, but from RGB value, we can tell they are clearly different colors. So, it’s valuable to use Kmeans Clustering to get the accurate color, instead of arbitrary group by the color name, I believe this matter for industry expertise.  
 
 <p align = 'center'>
-    <img src="./plots/popular_colors_2021_some_brand_3d.png" width="650"/><img src="./plots/popular_colors_2021_some_brand.png" width="650"/>
+    <img src="./plots/popular_colors_2021_some_brand_3d.png" width="600"/><img src="./plots/popular_colors_2021_some_brand.png" width="650"/>
     
 Those are predicted popular colors in 2021, but it’s a quick and dirty way to predict the popular colors, because it only contains 50 brands. 
 
-<div class="nospace">
 <p float="center">
-  <img src="./plots/popular_colors_2021_dior_3d.png" width="250" />
-  <img src="./plots/popular_colors_2021_fendi_3d.png" width="250" />
-  <img src="./plots/popular_colors_2021_valentina_3d.png" width="250" />
+  <img src="./plots/popular_colors_2021_dior_3d.png" width="260" />
+  <img src="./plots/popular_colors_2021_fendi_3d.png" width="260" />
+  <img src="./plots/popular_colors_2021_valentina_3d.png" width="260" />
 </p>
 <p float="center">
-  <img src="./plots/popular_colors_2021_dior.png" width="250" />
-  <img src="./plots/popular_colors_2021_fendi.png" width="250" />
-  <img src="./plots/popular_colors_2021_valentina.png" width="250" />
-</p>
-</div>    
+  <img src="./plots/popular_colors_2021_dior.png" width="260" />
+  <img src="./plots/popular_colors_2021_fendi.png" width="260" />
+  <img src="./plots/popular_colors_2021_valentina.png" width="260" />
+</p>   
 
 We can also predict the popular colors for different brands, each brand usually has their own favorite colors for the season. 
 
