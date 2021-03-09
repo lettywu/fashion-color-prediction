@@ -16,18 +16,70 @@ So I scraped my image data from Vogue runway, 50 leading brands with fall and sp
 
 First, I used YOLO v5 to conduct the object detection. YOLO v5 is a family of compound-scaled object detection models trained on the COCO dataset. YOLO stands for *you only look once*,  it’s a convolutional networks. YOLO originally come out around 2016 and YOLO v5 come out in July 2020, it’s know for its speed and easy to use. 
 <p align = 'center'>
-    <img src="./plots/chanel_2019_fall_71.jpg"/>
+    <img src="./plots/chanel_2019_fall_71.jpg" width="400"/>
+    
+Second, I cropped the model along out of the original pictures, the approach is saving the biggest object YOLO detected, which in this case, it’s always the model.
+<p align = 'center'>
+    <img src="./plots/chanel_2019_fall_71_crop.jpg" width="400"/>
+    
+Third, I removed the background using [rembg](https://github.com/danielgatis/rembg) package, by doing this, I transferred the background into transparent. 
+<p align = 'center'>
+    <img src="./plots/chanel_2019_fall_71_rembg.jpg" width="400"/>
 
+Finally, I used Pillow library to resize all the pictures to save some computation power.
+<p align = 'center'>
+    <img src="./plots/chanel_2019_fall_71.out.jpg" width="400"/>
 
+## Modeling
+    
+After done with the processing, I extract the domain colors with their RGBA value from each image and put them into a data frame. I also tried hex color system, hex color system is a hexadecimal way to represent a color in RGB format by combining three values, however hex color system didn’t perform well when I use Kmeans Clustering, so I ended up using RGBA value. 
 
+<h1><center>sample of dataframe</center></h1>
 
+|**brand**|**year**|**season**|**num**|**r**|**g**|**b**|**a**|
+|-|-|-|-|-|-|-|-|
+|chanel|2021|spring|48|206|167|150|253|
+|chanel|2021|spring|48|17|25|33|253|
+|chanel|2021|spring|48|178|136|120|253|
+|koche|2021|spring|35|27|23|30|253|
+|dsquared|2021|fall|4|104|95|95|249|
+|burberry-prosum|2021|spring|42|89|89|92|253|
+|christian-dior|2021|spring|35|205|180|159|253|
 
+## Insights
+<p float="left">
+  <img src="./plots/popular_color_single_pic_3d.png" width="300" />
+  <img src="./plots/chanel_2018_spring_12.out.png" width="100" /> 
+</p>
+<p align = 'center'>
+    <img src="./plots/popular_color_single_pic.png" width="400"/>
+This is a demonstration of the popular color from on model, at very top, all the 3 blueish color they have same name, but from RGB value, we can tell they are clearly different colors. So, it’s valuable to use Kmeans Clustering to get the accurate color, instead of arbitrary group by the color name, I believe this matter for industry expertise.  
 
+<p align = 'center'>
+    <img src="./plots/popular_colors_2021_some_brand_3d.png" width="400"/>
+<p align = 'center'>
+    <img src="./plots/popular_colors_2021_some_brand.png" width="400"/>
+Those are predicted popular colors in 2021, but it’s a quick and dirty way to predict the popular colors, because it only contains 50 brands. 
 
+<p float="left">
+  <img src="./plots/popular_colors_2021_dior_3d.png" width="150" />
+  <img src="./plots/popular_colors_2021_fendi_3d.png" width="150" />
+  <img src="./plots/popular_colors_2021_valentina_3d.png" width="150" />
+</p>
+<p float="left">
+  <img src="./plots/popular_colors_2021_dior.png" width="150" />
+  <img src="./plots/popular_colors_2021_fendi.png" width="150" />
+  <img src="./plots/popular_colors_2021_valentina.png" width="150" />
+</p>
+We can also predict the popular colors for different brands, each brand usually has their own favorite colors for the season. 
 
+## What's next
 
+-Exclude models’ skin color out of the domain colors. Maybe train my own YOLO model and make it predict the clothing only. 
 
+-Image data are huge, I would like to use more than 50 brands to predict the colors, maybe this problem can be solved by using Google Cloud Platform. 
 
+-Make an app using Streamlit.
 
 
 
