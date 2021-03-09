@@ -20,15 +20,15 @@ First, I used YOLO v5 to conduct the object detection. YOLO v5 is a family of co
     
 Second, I cropped the model along out of the original pictures, the approach is saving the biggest object YOLO detected, which in this case, it’s always the model.
 <p align = 'center'>
-    <img src="./plots/chanel_2019_fall_71_crop.jpg" width="150"/>
+    <img src="./plots/chanel_2019_fall_71_crop.jpg" width="100"/>
     
 Third, I removed the background using [rembg](https://github.com/danielgatis/rembg) package, by doing this, I transferred the background into transparent. 
 <p align = 'center'>
-    <img src="./plots/chanel_2019_fall_71_rembg.png" width="150"/>
+    <img src="./plots/chanel_2019_fall_71_rembg.png" width="100"/>
 
 Finally, I used Pillow library to resize all the pictures to save some computation power.
 <p align = 'center'>
-    <img src="./plots/chanel_2019_fall_71.out.png" width="150"/>
+    <img src="./plots/chanel_2019_fall_71.out.png" width="100"/>
 
 
 ## Modeling
@@ -57,11 +57,11 @@ After done with the processing, I extract the domain colors with their RGBA valu
 This is a demonstration of the popular color from on model, at very top, all the 3 blueish color they have same name, but from RGB value, we can tell they are clearly different colors. So, it’s valuable to use Kmeans Clustering to get the accurate color, instead of arbitrary group by the color name, I believe this matter for industry expertise.  
 
 <p align = 'center'>
-    <img src="./plots/popular_colors_2021_some_brand_3d.png" width="400"/>
-<p align = 'center'>
-    <img src="./plots/popular_colors_2021_some_brand.png" width="400"/>
+    <img src="./plots/popular_colors_2021_some_brand_3d.png" width="400"/><img src="./plots/popular_colors_2021_some_brand.png" width="400"/>
+    
 Those are predicted popular colors in 2021, but it’s a quick and dirty way to predict the popular colors, because it only contains 50 brands. 
 
+<div class="nospace">
 <p float="center">
   <img src="./plots/popular_colors_2021_dior_3d.png" width="200" />
   <img src="./plots/popular_colors_2021_fendi_3d.png" width="200" />
@@ -72,6 +72,8 @@ Those are predicted popular colors in 2021, but it’s a quick and dirty way to 
   <img src="./plots/popular_colors_2021_fendi.png" width="200" />
   <img src="./plots/popular_colors_2021_valentina.png" width="200" />
 </p>
+</div>    
+
 We can also predict the popular colors for different brands, each brand usually has their own favorite colors for the season. 
 
 ## What's next
