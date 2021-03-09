@@ -20,22 +20,22 @@ First, I used YOLO v5 to conduct the object detection. YOLO v5 is a family of co
     
 Second, I cropped the model along out of the original pictures, the approach is saving the biggest object YOLO detected, which in this case, it’s always the model.
 <p align = 'center'>
-    <img src="./plots/chanel_2019_fall_71_crop.jpg" width="100"/>
+    <img src="./plots/chanel_2019_fall_71_crop.jpg" width="80"/>
     
 Third, I removed the background using [rembg](https://github.com/danielgatis/rembg) package, by doing this, I transferred the background into transparent. 
 <p align = 'center'>
-    <img src="./plots/chanel_2019_fall_71_rembg.png" width="100"/>
+    <img src="./plots/chanel_2019_fall_71_rembg.png" width="80"/>
 
 Finally, I used Pillow library to resize all the pictures to save some computation power.
 <p align = 'center'>
-    <img src="./plots/chanel_2019_fall_71.out.png" width="100"/>
+    <img src="./plots/chanel_2019_fall_71.out.png" width="80"/>
 
 
 ## Modeling
     
 After done with the processing, I extract the domain colors with their RGBA value from each image and put them into a data frame. I also tried hex color system, hex color system is a hexadecimal way to represent a color in RGB format by combining three values, however hex color system didn’t perform well when I use Kmeans Clustering, so I ended up using RGBA value. 
 
-<h4><center>Sample of dataframe!</center></h4>
+<h4><center>Sample of dataframe</center></h4>
 
 |**brand**|**year**|**season**|**num**|**r**|**g**|**b**|**a**|
 |-|-|-|-|-|-|-|-|
